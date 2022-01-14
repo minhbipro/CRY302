@@ -11,6 +11,7 @@ esddgnutd, spt flalxsuc mnffjplmsxlnpd"""
 f = open("C:\\Users\\minhb\\OneDrive\\Desktop\\corncob_lowercase.txt","r")
 word = f.read().split()
 word2 = text.replace(",","").replace(";","").replace(".","").lower().split()
+tmp = text.replace(",","").replace(";","").replace(".","").lower()
 
 dic = dict()
 for i in word2:# tim tat ca cac tu dai hon 10 ky tu
@@ -18,7 +19,7 @@ for i in word2:# tim tat ca cac tu dai hon 10 ky tu
 		dic[i] = i
 
 # print(dic)
-
+key = dict()
 for i in dic.keys():# tim tat ca cac tu co the xu dung bang tu dien tieng anh
 	index=[]
 	possiValue=[pos for pos in word if len(pos)==len(i)]
@@ -28,5 +29,31 @@ for i in dic.keys():# tim tat ca cac tu co the xu dung bang tu dien tieng anh
 			possiValue = [pos for pos in possiValue if pos[index[0]]==pos[index[1]]]
 		elif len(index) > 2:
 			possiValue = [pos for pos in possiValue if pos[index[0]]==pos[index[1]]==pos[index[2]]]
-	print(i,"co the la:", possiValue)
+	# print(i,"co the la:", possiValue)
+	if len(possiValue)==1: # thay the toan bo tu co kha nang vao cipher text
+		for c in range(len(i)):
+			tmp = tmp.replace(i[c],possiValue[0][c].upper())
+			# key[i[c]] = possiValue[0][c] # tao key giai ma
+# print(tmp)
 
+word2 = tmp.split()
+for i in word2:
+	if not i.isupper():
+		for b in word:
+			if len(b)==len(i):
+				# print(b)
+				match=True
+				lower=""
+				for char in range(len(i)):
+					if i[char].isupper():
+						if b[char]!=i[char].lower():
+							match=False
+							break
+					else:
+						lower=char
+						continue
+				if match:
+					tmp = tmp.replace(i[lower],b[lower].upper())
+
+# print(tmp.isupper())
+print(tmp)
