@@ -11,10 +11,10 @@ public class App {
             i = i.add(new BigInteger("1"));
             m = n.multiply(i).add(c);
             System.out.println("i= "+ i);
-            right = root(m,new BigInteger("3"));
+            right = root(m, 3);
         }
     }
-    public static boolean root(BigInteger m, BigInteger mu){
+    public static boolean root(BigInteger m, int mu){
         BigInteger low = new BigInteger("1");
         BigInteger high = m.sqrt();
         BigInteger mid = low.add(high).divide(new BigInteger("2"));
@@ -25,14 +25,14 @@ public class App {
             // System.out.println("low = "+ low);
             if(low.equals(high)) return true;
             if(low.equals(high.subtract(new BigInteger("1")))) return true;
-            if(mid.pow(3).equals(m)){
+            if(mid.pow(mu).equals(m)){
                 System.out.println(mid);
                 return false;
             }
-            else if(mid.pow(3).compareTo(m)<0){
+            else if(mid.pow(mu).compareTo(m)<0){
                 low = mid;
                 mid = low.add(high).divide(new BigInteger("2"));
-            }else if(mid.pow(3).compareTo(m)>0){
+            }else if(mid.pow(mu).compareTo(m)>0){
                 high = mid;
                 mid = low.add(high).divide(new BigInteger("2"));
             }
