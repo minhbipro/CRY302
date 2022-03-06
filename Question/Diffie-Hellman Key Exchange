@@ -1,10 +1,10 @@
-α = 3</br>
-p(modulus prime number) = 864547859034747631900548722587</br>
-Person1's public key = IA1405_CRY302</br>
-Person2's public key = Crypto_Easy</br>
-</br>
-s (shared key) = ?</br>
-</br>
-<h1>HINT:</h1></br>
-<h2>https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange</h2></br>
-<h2>https://www.alpertron.com.ar/DILOG.HTM</h2>
+α = 3
+p(modulus prime number) = 864547859034747631900548722587
+Person1's public key = IA1405_CRY302
+Person2's public key = Crypto_Easy
+
+s (shared key) = ?
+
+HINT:
+https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange
+https://www.alpertron.com.ar/DILOG.HTM
